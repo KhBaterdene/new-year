@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from "next/image";
 import {
   Root,
   Trigger,
@@ -6,7 +6,7 @@ import {
   Overlay,
   Content,
   DialogClose,
-} from '@radix-ui/react-dialog';
+} from "@radix-ui/react-dialog";
 
 const Item = () => {
   return (

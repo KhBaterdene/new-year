@@ -1,7 +1,8 @@
-import { useRef, useState } from 'react';
-import Image from 'next/image';
-import Header from '../components/header';
-import Products from '../components/products';
+import { useRef, useState } from "react";
+import Image from "next/image";
+import Header from "../components/header";
+import Products from "../components/products";
+import Footer from "../components/footer";
 
 export default function Home() {
   const slideTwo = useRef<HTMLDivElement>(null);
@@ -11,7 +12,7 @@ export default function Home() {
   const goToSlideTwo = () =>
     slideTwo.current &&
     slideTwo.current.scrollIntoView({
-      behavior: 'smooth',
+      behavior: "smooth",
     });
 
   const onScroll = (e: any) => {
@@ -31,11 +32,17 @@ export default function Home() {
         scrollTop={scrollTop}
         scrollData={scrollData}
       />
-      <div className=" min-h-screen  p-8 flex items-stretch" ref={slideTwo}>
+      <div
+        id="home"
+        className=" min-h-screen  p-8 flex items-stretch"
+        ref={slideTwo}
+      >
         <div className="relative p-8 mt-20 rounded-3xl overflow-hidden max-w-6xl mx-auto">
-          <Image src={'/video-bg.png'} fill alt="hi" className="object-cover" />
+          <Image src={"/video-bg.png"} fill alt="hi" className="object-cover" />
           <div className="relative ">
-            <h1 className="font-bold pb-8">Introduction</h1>
+            <h1 id="intro" className="font-bold pb-8">
+              Introduction
+            </h1>
             <div>
               <div className="aspect-w-16 aspect-h-9 relative">
                 <iframe
@@ -62,7 +69,8 @@ export default function Home() {
         </div>
       </div>
       <Products />
-      <footer className="bg-black p-6">footer</footer>
+      {/* <footer className="bg-black p-6">footer</footer> */}
+      <Footer></Footer>
     </div>
   );
 }
